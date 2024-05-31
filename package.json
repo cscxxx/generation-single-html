@@ -4,12 +4,15 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "view-origin": "http-server origin -a localhost -p 8081 -o",
+    "view-single": "http-server -a localhost -p 8082 -o",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "cheerio": "^1.0.0-rc.12"
+    "cheerio": "^1.0.0-rc.12",
+    "http-server": "^14.1.1"
   }
 }
