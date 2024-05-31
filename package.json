@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "view-origin": "http-server origin -a localhost -p 8081 -o",
-    "view-single": "http-server -a localhost -p 8082 -o",
+    "view-origin-html": "http-server origin -a localhost -p 8081 -o",
+    "view-single-html": "http-server -a localhost -p 8082 -o",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
