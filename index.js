@@ -3,6 +3,7 @@ const { removeComments } = require('./utils/removeComments.js');
 const { insertScriptContent } = require('./utils/insertScriptContent.js');
 const { insertStyleContent } = require('./utils/insertStyleContent.js');
 const { pictureToBase64 } = require('./utils/pictureToBase64.js');
+const { compressHtml } = require('./utils/compressHtml.js');
 
 // 读取index.html文件内容
 fs.readFile('./origin/index.html', 'utf8', (err, data) => {
@@ -22,7 +23,11 @@ fs.readFile('./origin/index.html', 'utf8', (err, data) => {
     const data3 = insertStyleContent(data2)
 
     // 匹配图片标签中的文件路径，转成base64
-   const data4 = pictureToBase64(data3);
+    const data4 = pictureToBase64(data3);
+
+    // 压缩生成的html
+    compressHtml(data4);
+
 
     // 将处理后的内容写入新的index.html文件
     fs.writeFile('index.html', data4, 'utf8', (err) => {
